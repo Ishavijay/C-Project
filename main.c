@@ -1,0 +1,123 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int choice;
+    int quantity;
+    float processorPrice = 0, gpuPrice = 0, ramPrice = 0, storagePrice = 0, otherPrice = 0, monitorPrice = 0;
+    char processor[30], gpu[40], ram[10], storage[30], other[20], monitor[5];
+
+    printf("===== ISHVIT CORPORATIONS =====\n");
+    printf("Welcome! Customize your PC Order Below.\n\n");
+
+    // Processor Menu
+    printf("Select Processor (CPU):\n");
+    printf("1. Intel i3 - $200\n2. Intel i7 - $300\n3. AMD Ryzen 5 - $110\n4. AMD Ryzen 7 - $250\n");
+    printf("Enter choice (1-4): ");
+    scanf("%d", &choice);
+
+    switch(choice) {
+        case 1: strcpy(processor, "Intel i3"); processorPrice = 200; break;
+        case 2: strcpy(processor, "Intel i7"); processorPrice = 300; break;
+        case 3: strcpy(processor, "AMD Ryzen 5"); processorPrice = 110; break;
+        case 4: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250; break;
+        default: strcpy(processor, "None"); processorPrice = 0;
+    }
+
+    // GPU Menu
+    printf("\nSelect Graphics Card (GPU):\n");
+    printf("1. NVIDIA GTX 1650 - $150\n2. NVIDIA GTX 3060 - $400\n3. JieShou AMD RX580 8G - $140\n4. AMD Radeon RX 6600 - $300\n");
+    printf("Enter choice (1-4): ");
+    scanf("%d", &choice);
+
+    switch(choice) {
+        case 1: strcpy(gpu, "NVIDIA GTX 1650"); gpuPrice = 150; break;
+        case 2: strcpy(gpu, "NVIDIA GTX 3060"); gpuPrice = 400; break;
+        case 3: strcpy(gpu, "JieShou AMD RX580 8G"); gpuPrice = 140; break;
+        case 4: strcpy(gpu, "AMD Radeon RX 6600"); gpuPrice = 300; break;
+        default: strcpy(gpu, "None"); gpuPrice = 0;
+    }
+
+    // RAM Menu
+    printf("\nSelect RAM:\n");
+    printf("1. 2GB - $15\n2. 4GB - $30\n3. 8GB - $50\n4. 16GB - $80\n5. 32GB - $150\n");
+    printf("Enter choice (1-5): ");
+    scanf("%d", &choice);
+
+    switch(choice) {
+        case 1: strcpy(ram, "2GB"); ramPrice = 15; break;
+        case 2: strcpy(ram, "4GB"); ramPrice = 30; break;
+        case 3: strcpy(ram, "8GB"); ramPrice = 50; break;
+        case 4: strcpy(ram, "16GB"); ramPrice = 80; break;
+        case 5: strcpy(ram, "32GB"); ramPrice = 150; break;
+        default: strcpy(ram, "None"); ramPrice = 0;
+    }
+
+    // Storage Menu
+    printf("\nSelect Storage:\n");
+    printf("1. 256GB Pendrive - $40\n2. 500GB SSD - $70\n3. 1TB Portable SSD - $120\n4. 5TB HDD - $100\n");
+    printf("Enter choice (1-4): ");
+    scanf("%d", &choice);
+
+    switch(choice) {
+        case 1: strcpy(storage, "256GB Pendrive"); storagePrice = 40; break;
+        case 2: strcpy(storage, "500GB SSD"); storagePrice = 70; break;
+        case 3: strcpy(storage, "1TB Portable SSD"); storagePrice = 120; break;
+        case 4: strcpy(storage, "5TB HDD"); storagePrice = 100; break;
+        default: strcpy(storage, "None"); storagePrice = 0;
+    }
+
+    // Other Accessories Menu
+    printf("\nSelect Other Accessory:\n");
+    printf("1. HDMI Cable - $10\n2. Printer - $300\n3. Keyboard - $150\n4. Mouse - $40\n5. None\n");
+    printf("Enter choice (1-5): ");
+    scanf("%d", &choice);
+
+    switch(choice) {
+        case 1: strcpy(other, "HDMI Cable"); otherPrice = 10; break;
+        case 2: strcpy(other, "Printer"); otherPrice = 300; break;
+        case 3: strcpy(other, "Keyboard"); otherPrice = 150; break;
+        case 4: strcpy(other, "Mouse"); otherPrice = 40; break;
+        default: strcpy(other, "None"); otherPrice = 0;
+    }
+
+    // Monitor Option
+    printf("\nDo you need a Monitor ($600)?\n1. Yes\n2. No\nEnter choice (1-2): ");
+    scanf("%d", &choice);
+
+    if(choice == 1) { strcpy(monitor, "Yes"); monitorPrice = 600; }
+    else { strcpy(monitor, "No"); monitorPrice = 0; }
+
+    // Quantity
+    printf("\nEnter Quantity: ");
+    scanf("%d", &quantity);
+
+    // Total Price
+    float totalPrice = (processorPrice + gpuPrice + ramPrice + storagePrice + otherPrice + monitorPrice) * quantity;
+
+    // Order Summary
+    printf("\n===== ORDER SUMMARY =====\n");
+    printf("Processor: %s\n", processor);
+    printf("GPU: %s\n", gpu);
+    printf("RAM: %s\n", ram);
+    printf("Storage: %s\n", storage);
+    printf("Other: %s\n", other);
+    printf("Monitor: %s\n", monitor);
+    printf("Quantity: %d\n", quantity);
+    printf("----------------------------\n");
+    printf("Total Price: $%.2f\n", totalPrice);
+    printf("============================\n");
+
+    // Confirmation
+    printf("\nConfirm Order?\n1. Yes\n2. No\nEnter choice (1-2): ");
+    scanf("%d", &choice);
+
+    if(choice == 1)
+        printf("\n✅ Yay! Your order has been placed successfully.\n");
+    else
+        printf("\n❌ Order cancelled.\n");
+
+    printf("\nThank you for shopping with ISHVIT CORPORATIONS!\n");
+
+    return 0;
+}

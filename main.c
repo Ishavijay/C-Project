@@ -13,21 +13,22 @@ int main() {
     // Processor Menu
     printf("Select Processor (CPU):\n");
     printf("Intel Core \n");
-    printf(1.Intel i3-12100 -$350.0\n2. Intel i5 - $300\n3.Intel i5-$\4.Intel i7-12100 -$350.0\n5. Intel i7-\n6. Intel i7-12100 -$350.0\n2 );
+    printf(1.Intel i3-12100 -$350.0\n2. Intel i5-14400F - $300\n3.Intel i5-14600 - $\4.Intel i5 -14600K-$300\n5.Intel i7-14700 -$350.0\n6. Intel i7-13700 - $\n7. Intel i7-12100 -$350.0\n2 );
     printf("AMD Ryzen");
-    printf("AMD Ryzen 5 - $110\n4. AMD Ryzen 7 - $250\n");
+    printf("8.AMD Ryzen 5 - $110\n9. AMD Ryzen 7 - $250\n");
     printf("Enter choice (1-4): ");
     scanf("%d", &choice);
 
     switch(choice) {
-        case 1: strcpy(processor, "Intel i3"); processorPrice = 350.0; break;
-        case 2: strcpy(processor, "Intel i7"); processorPrice = 300.0; break;
-        case 3: strcpy(processor, "AMD Ryzen 5"); processorPrice = 110.0; break;
-        case 4: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250.0; break;
-        case 5: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250.0; break;
-        case 6: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250.0; break;
-        case 7: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250.0; break;    
-        case 8: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250.0; break;
+        case 1: strcpy(processor, "Intel i3-12100"); processorPrice = 350.0; break;
+        case 2: strcpy(processor, "Intel i5-14400F"); processorPrice = 300.0; break;
+        case 3: strcpy(processor, "Intel i5-14600K"); processorPrice = 110.0; break;
+        case 4: strcpy(processor, "Intel i5-13600KF"); processorPrice = 250.0; break;
+        case 5: strcpy(processor, "Intel i7"); processorPrice = 250.0; break;
+        case 6: strcpy(processor, "Intel i7"); processorPrice = 250.0; break;
+        case 7: strcpy(processor, "Intel i7"); processorPrice = 250.0; break;    
+        case 8: strcpy(processor, "AMD Ryzen 5"); processorPrice = 250.0; break;
+        case 9: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250.0; break;
         default: strcpy(processor, "None"); processorPrice = 0.0;
     }
 

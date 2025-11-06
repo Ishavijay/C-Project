@@ -12,7 +12,10 @@ int main() {
 
     // Processor Menu
     printf("Select Processor (CPU):\n");
-    printf("Intel Core \n")printf(1. i3-12100 -$350.0\n2. Intel i7 - $300\n3. AMD Ryzen 5 - $110\n4. AMD Ryzen 7 - $250\n");
+    printf("Intel Core \n");
+    printf(1.Intel i3-12100 -$350.0\n2. Intel i5 - $300\n3.Intel i5-$\4.Intel i7-12100 -$350.0\n5. Intel i7-\n6. Intel i7-12100 -$350.0\n2 );
+    printf("AMD Ryzen");
+    printf("AMD Ryzen 5 - $110\n4. AMD Ryzen 7 - $250\n");
     printf("Enter choice (1-4): ");
     scanf("%d", &choice);
 
@@ -21,6 +24,10 @@ int main() {
         case 2: strcpy(processor, "Intel i7"); processorPrice = 300.0; break;
         case 3: strcpy(processor, "AMD Ryzen 5"); processorPrice = 110.0; break;
         case 4: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250.0; break;
+        case 5: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250.0; break;
+        case 6: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250.0; break;
+        case 7: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250.0; break;    
+        case 8: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250.0; break;
         default: strcpy(processor, "None"); processorPrice = 0.0;
     }
 

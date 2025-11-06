@@ -13,20 +13,20 @@ int main() {
     // Processor Menu
     printf("Select Processor (CPU):\n");
     printf("Intel Core \n");
-    printf(1.Intel i3-12100 -$350.0\n2. Intel i5-14400F - $300\n3.Intel i5-14600 - $\4.Intel i5 -14600K-$300\n5.Intel i7-14700F -$350.0\n6. Intel i7-13700K - $\n7. Intel i7-14700KF -$350.0\n );
+    printf(1.Intel i3-12100 -$350.0\n2. Intel i5-14400F - $350\n3.Intel i5-14600 - $370\4.Intel i5 -14600K-$390\n5.Intel i7-14700F -$400.0\n6. Intel i7-13700K - $450\n7. Intel i7-14700KF -$500.0\n );
     printf("AMD Ryzen");
-    printf("8.AMD Ryzen 5 - $110\n9. AMD Ryzen 7 - $250\n10. AMD Ryzen 9 - $250");
+    printf("8.AMD Ryzen 9 9900X3D - $110\n9. AMD Ryzen 5 7600X- $250\n10. AMD Ryzen 7 9800X3D:- $250");
     printf("Enter choice (1-4): ");
     scanf("%d", &choice);
 
     switch(choice) {
         case 1: strcpy(processor, "Intel i3-12100"); processorPrice = 350.0; break;
-        case 2: strcpy(processor, "Intel i5-14400F"); processorPrice = 300.0; break;
-        case 3: strcpy(processor, "Intel i5-14600K"); processorPrice = 110.0; break;
-        case 4: strcpy(processor, "Intel i5-13600KF"); processorPrice = 250.0; break;
-        case 5: strcpy(processor, "Intel i7"); processorPrice = 250.0; break;
-        case 6: strcpy(processor, "Intel i7"); processorPrice = 250.0; break;
-        case 7: strcpy(processor, "Intel i7"); processorPrice = 250.0; break;    
+        case 2: strcpy(processor, "Intel i5-14400F"); processorPrice = 350.0; break;
+        case 3: strcpy(processor, "Intel i5-14600K"); processorPrice = 370.0; break;
+        case 4: strcpy(processor, "Intel i5-13600KF"); processorPrice = 390.0; break;
+        case 5: strcpy(processor, "Intel i7-14700F"); processorPrice = 400.0; break;
+        case 6: strcpy(processor, "Intel i7"); processorPrice = 450.0; break;
+        case 7: strcpy(processor, "Intel i7"); processorPrice = 500.0; break;    
         case 8: strcpy(processor, "AMD Ryzen 5"); processorPrice = 250.0; break;
         case 9: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250.0; break;
         case 10: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250.0; break;

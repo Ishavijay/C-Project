@@ -2,6 +2,8 @@
 #include <string.h>
 
 int main() {
+    char name,address;
+    int mobile_number;
     int choice,choice1,choice2,choice3,choice4,choice5;
     int quantity;
     float processorPrice = 0.0, gpuPrice = 0.0, ramPrice = 0.0, storagePrice = 0.0, otherPrice = 0.0, monitorPrice = 0.0;
@@ -10,6 +12,13 @@ int main() {
     printf("===== ISHVIT CORPORATIONS =====\n");
     printf("Welcome! Customize your PC Order Below.\n\n");
 
+    //Personal details
+    printf("Please enter your name:");
+    scanf("%d",&name);
+    printf("Enter your mobile number:");
+    scanf("%c",&mobile_number);
+    printf("Enter your address");
+    scanf("%c",&address);
     // Processor Menu
     printf("Select Processor (CPU):\n");
     printf("Intel Core \n");
@@ -105,7 +114,8 @@ int main() {
     float totalPrice = (processorPrice + gpuPrice + ramPrice + storagePrice + otherPrice + monitorPrice) * quantity;
 
     // Order Summary
-    printf("\n===== ORDER SUMMARY =====\n");
+    printf("Hi %c here is your order summary,Please check!!",name);
+    printf("\n=====> ORDER SUMMARY <=====\n");
     printf("Processor: %s\n", processor);
     printf("GPU: %s\n", gpu);
     printf("RAM: %s\n", ram);
@@ -122,11 +132,11 @@ int main() {
     scanf("%d", &choice5);
 
     if(choice5 == 1){
-        printf("\n (^ _ ^) Yay! Your order has been placed successfully.\n");
+        printf("\n (^ _ ^) Yay! %c Your order has been placed successfully.\n",name);
         printf("\nThank you for shopping with ISHVIT CORPORATIONS!\n");
     }else{
         printf("\n (>_<) Order cancelled.\n");
-            printf("See you next time, till then byee, have a great day!!");
+            printf("See you next time %c, till then byee, have a great day!!",name);
     }
     return 0;
 }

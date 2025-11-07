@@ -2,7 +2,7 @@
 #include <string.h>
 
 int main() {
-    char name,address;
+    char name[50],address[100];
     int mobile_number;
     int choice,choice1,choice2,choice3,choice4,choice5;
     int quantity;
@@ -14,11 +14,11 @@ int main() {
 
     //Personal details
     printf("Please enter your name:");
-    scanf("%c",&name);
+    fgets(name, sizeof(name), stdin);
     printf("Enter your mobile number:");
     scanf("%d",&mobile_number);
     printf("Enter your address");
-    scanf("%c",&address);
+    fgets(address, sizeof(address), stdin);
     // Processor Menu
     printf("Select Processor (CPU):\n");
     printf("Intel Core \n");

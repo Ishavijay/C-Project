@@ -13,7 +13,7 @@ int main() {
     // Processor Menu
     printf("Select Processor (CPU):\n");
     printf("Intel Core \n");
-    printf(1.Intel i3-12100 -$350.0\n2. Intel i5-14400F - $350\n3.Intel i5-14600 - $370\4.Intel i5 -14600K-$390\n5.Intel i7-14700F -$400.0\n6. Intel i7-13700K - $450\n7. Intel i7-14700KF -$500.0\n );
+    printf("1.Intel i3-12100 -$350.0\n2. Intel i5-14400F - $350\n3.Intel i5-14600 - $370\4.Intel i5 -14600K-$390\n5.Intel i7-14700F -$400.0\n6. Intel i7-13700K - $450\n7. Intel i7-14700KF -$500.0\n ");
     printf("AMD Ryzen");
     printf("8.AMD Ryzen 9 9900X3D - $110\n9. AMD Ryzen 5 7600X- $250\n10. AMD Ryzen 7 9800X3D:- $250");
     printf("Enter choice (1-4): ");

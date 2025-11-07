@@ -2,7 +2,7 @@
 #include <string.h>
 
 int main() {
-    int choice,choice1,choice2,choice3,choice4;
+    int choice,choice1,choice2,choice3,choice4,choice5;
     int quantity;
     float processorPrice = 0.0, gpuPrice = 0.0, ramPrice = 0.0, storagePrice = 0.0, otherPrice = 0.0, monitorPrice = 0.0;
     char processor[30], gpu[40], ram[10], storage[30], other[20], monitor[5];
@@ -16,7 +16,7 @@ int main() {
     printf("1.Intel i3-12100 -$350.0\n2. Intel i5-14400F - $350\n3.Intel i5-14600 - $370\4.Intel i5 -14600K-$390\n5.Intel i7-14700F -$400.0\n6. Intel i7-13700K - $450\n7. Intel i7-14700KF -$500.0\n ");
     printf("AMD Ryzen");
     printf("8.AMD Ryzen 9 9900X3D - $110\n9. AMD Ryzen 5 7600X- $250\n10. AMD Ryzen 7 9800X3D:- $250");
-    printf("Enter choice (1-4): ");
+    printf("Enter choice (1-10): ");
     scanf("%d", &choice);
 
     switch(choice) {
@@ -37,7 +37,7 @@ int main() {
     printf("\nSelect Graphics Card (GPU):\n");
     printf("1. NVIDIA GTX 1650 - $150\n2. NVIDIA GTX 3060 - $400\n3. JieShou AMD RX580 8G - $140\n4. AMD Radeon RX 6600 - $300\n");
     printf("Enter choice (1-4): ");
-    scanf("%d", &choice);
+    scanf("%d", &choice1);
 
     switch(choice1) {
         case 1: strcpy(gpu, "NVIDIA GTX 1650"); gpuPrice = 150.0; break;
@@ -51,7 +51,7 @@ int main() {
     printf("\nSelect RAM:\n");
     printf("1. 2GB - $15\n2. 4GB - $30\n3. 8GB - $50\n4. 16GB - $80\n5. 32GB - $150\n");
     printf("Enter choice (1-5): ");
-    scanf("%d", &choice);
+    scanf("%d", &choice2);
 
     switch(choice2) {
         case 1: strcpy(ram, "2GB"); ramPrice = 15.0; break;
@@ -66,7 +66,7 @@ int main() {
     printf("\nSelect Storage:\n");
     printf("1. 256GB Pendrive - $40\n2. 500GB SSD - $70\n3. 1TB Portable SSD - $120\n4. 5TB HDD - $100\n");
     printf("Enter choice (1-4): ");
-    scanf("%d", &choice);
+    scanf("%d", &choice3);
 
     switch(choice3) {
         case 1: strcpy(storage, "256GB Pendrive"); storagePrice = 40.0; break;
@@ -80,9 +80,9 @@ int main() {
     printf("\nSelect Other Accessory:\n");
     printf("1. HDMI Cable - $10\n2. Printer - $300\n3. Keyboard - $150\n4. Mouse - $40\n5. None\n");
     printf("Enter choice (1-5): ");
-    scanf("%d", &choice);
+    scanf("%d", &choice4);
 
-    switch(choice4 ) {
+    switch(choice4) {
         case 1: strcpy(other, "HDMI Cable"); otherPrice = 10.0; break;
         case 2: strcpy(other, "Printer"); otherPrice = 300.0; break;
         case 3: strcpy(other, "Keyboard"); otherPrice = 150.0; break;
@@ -119,14 +119,14 @@ int main() {
 
     // Confirmation
     printf("\nConfirm Order?\n1. Yes\n2. No\nEnter choice (1-2): ");
-    scanf("%d", &choice);
+    scanf("%d", &choice5);
 
-    if(choice == 1)
+    if(choice5 == 1){
         printf("\n (^ _ ^) Yay! Your order has been placed successfully.\n");
         printf("\nThank you for shopping with ISHVIT CORPORATIONS!\n");
-    else
-        printf("\n (>_<) Order cancelled.\n")
+    }else{
+        printf("\n (>_<) Order cancelled.\n");
             printf("See you next time, till then byee, have a great day!!");
-
+    }
     return 0;
 }

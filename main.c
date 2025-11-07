@@ -14,9 +14,9 @@ int main() {
 
     //Personal details
     printf("Please enter your name:");
-    scanf("%d",&name);
+    scanf("%c",&name);
     printf("Enter your mobile number:");
-    scanf("%c",&mobile_number);
+    scanf("%d",&mobile_number);
     printf("Enter your address");
     scanf("%c",&address);
     // Processor Menu

@@ -4,9 +4,7 @@
 float totalPrice(float a, float b, float c, float d, float e, float f, int g){
        int price=(a+b+c+d+e+f)*g;
     return price;}
-int main() {
-     
-    
+int main() { 
     char name[50];
     int mobile_number;
     int choice,choice1,choice2,choice3,choice4,choice5,choice6;
@@ -33,7 +31,7 @@ personal_details();
     printf("8.AMD Ryzen 9 9900X3D - $110\n9. AMD Ryzen 5 7600X- $250\n10. AMD Ryzen 7 9800X3D:- $250");
     printf("Enter choice (1-10): ");
     scanf("%d", &choice);
-
+if(choice>=1 && choice<=10){
     switch(choice) {
         case 1: strcpy(processor, "Intel i3-12100"); processorPrice = 350.0; break;
         case 2: strcpy(processor, "Intel i5-14400F"); processorPrice = 350.0; break;
@@ -46,28 +44,33 @@ personal_details();
         case 9: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250.0; break;
         case 10: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250.0; break;
         default: strcpy(processor, "None"); processorPrice = 0.0;
-    }
+    }}
+       else{
+              printf("INVALID INPUT");
+       }
 
     // GPU Menu
     printf("\nSelect Graphics Card (GPU):\n");
     printf("1. NVIDIA GTX 1650 - $150\n2. NVIDIA GTX 3060 - $400\n3. JieShou AMD RX580 8G - $140\n4. AMD Radeon RX 6600 - $300\n");
     printf("Enter choice (1-4): ");
     scanf("%d", &choice1);
-
-    switch(choice1) {
+if(choice1<=4 && choice1>=1)
+{    switch(choice1) {
         case 1: strcpy(gpu, "NVIDIA GTX 1650"); gpuPrice = 150.0; break;
         case 2: strcpy(gpu, "NVIDIA GTX 3060"); gpuPrice = 400.0; break;
         case 3: strcpy(gpu, "JieShou AMD RX580 8G"); gpuPrice = 140.0; break;
         case 4: strcpy(gpu, "AMD Radeon RX 6600"); gpuPrice = 300.0; break;
         default: strcpy(gpu, "None"); gpuPrice = 0.0;
-    }
-
+    }}
+else{
+              printf("INVALID INPUT");
+       }
     // RAM Menu
     printf("\nSelect RAM:\n");
     printf("1. 2GB - $15\n2. 4GB - $30\n3. 8GB - $50\n4. 16GB - $80\n5. 32GB - $150\n");
     printf("Enter choice (1-5): ");
     scanf("%d", &choice2);
-
+if(choice2<=5 && choice2>=1){
     switch(choice2) {
         case 1: strcpy(ram, "2GB"); ramPrice = 15.0; break;
         case 2: strcpy(ram, "4GB"); ramPrice = 30.0; break;
@@ -75,36 +78,44 @@ personal_details();
         case 4: strcpy(ram, "16GB"); ramPrice = 80.0; break;
         case 5: strcpy(ram, "32GB"); ramPrice = 150.0; break;
         default: strcpy(ram, "None"); ramPrice = 0.0;
-    }
+    }}
+       else{
+              printf("INVALID INPUT");
+       }
 
     // Storage Menu
     printf("\nSelect Storage:\n");
     printf("1. 256GB Pendrive - $40\n2. 500GB SSD - $70\n3. 1TB Portable SSD - $120\n4. 5TB HDD - $100\n");
     printf("Enter choice (1-4): ");
     scanf("%d", &choice3);
-
+if(choice2<=4 && choice2>=1){
     switch(choice3) {
         case 1: strcpy(storage, "256GB Pendrive"); storagePrice = 40.0; break;
         case 2: strcpy(storage, "500GB SSD"); storagePrice = 70.0; break;
         case 3: strcpy(storage, "1TB Portable SSD"); storagePrice = 120.0; break;
         case 4: strcpy(storage, "5TB HDD"); storagePrice = 100.0; break;
         default: strcpy(storage, "None"); storagePrice = 0.0;
-    }
+    }}
+       else{
+              printf("INVALID INPUT");
+       }
 
     // Other Accessories Menu
     printf("\nSelect Other Accessory:\n");
     printf("1. HDMI Cable - $10\n2. Printer - $300\n3. Keyboard - $150\n4. Mouse - $40\n5. None\n");
     printf("Enter choice (1-5): ");
     scanf("%d", &choice4);
-
+if(choice2<=4 && choice2>=1){
     switch(choice4) {
         case 1: strcpy(other, "HDMI Cable"); otherPrice = 10.0; break;
         case 2: strcpy(other, "Printer"); otherPrice = 300.0; break;
         case 3: strcpy(other, "Keyboard"); otherPrice = 150.0; break;
         case 4: strcpy(other, "Mouse"); otherPrice = 40.0; break;
         default: strcpy(other, "None"); otherPrice = 0.0;
-    }
-
+    }}
+else{
+              printf("INVALID INPUT");
+       }
     // Monitor Option
     printf("\nDo you need a Monitor ($600)?\n1. Yes\n2. No\nEnter choice (1-2): ");
     scanf("%d", &choice5);

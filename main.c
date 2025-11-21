@@ -1,30 +1,36 @@
 #include <stdio.h>
 #include <string.h>
-
+//otal cost function
+float totalPrice(float a, float b, float c, float d, float e, float f, int g){
+       int price=(a+b+c+d+e+f)*g;
+    return price;}
 int main() {
-    char name[50],address[100];
+     
+    
+    char name[50];
     int mobile_number;
-    int choice,choice1,choice2,choice3,choice4,choice5;
+    int choice,choice1,choice2,choice3,choice4,choice5,choice6;
     int quantity;
     float processorPrice = 0.0, gpuPrice = 0.0, ramPrice = 0.0, storagePrice = 0.0, otherPrice = 0.0, monitorPrice = 0.0;
     char processor[30], gpu[40], ram[10], storage[30], other[20], monitor[5];
-
-    printf("===== ISHVIT CORPORATIONS =====\n");
-    printf("Welcome! Customize your PC Order Below.\n\n");
-
-    //Personal details
+    char personal_details(){
     printf("Please enter your name:");
     fgets(name, sizeof(name), stdin);
     printf("Enter your mobile number:");
     scanf("%d",&mobile_number);
-    printf("Enter your address");
-    fgets(address, sizeof(address), stdin);
+    return 0;
+    }
+
+    printf("===== ISHVIT CORPORATIONS =====\n");
+    printf("Welcome! Customize your PC Order Below.\n\n");
+//calling personal details function
+personal_details();
     // Processor Menu
     printf("Select Processor (CPU):\n");
     printf("Intel Core \n");
     printf("1.Intel i3-12100 -$350.0\n2. Intel i5-14400F - $350\n3.Intel i5-14600 - $370\4.Intel i5 -14600K-$390\n5.Intel i7-14700F -$400.0\n6. Intel i7-13700K - $450\n7. Intel i7-14700KF -$500.0\n ");
-    printf("AMD Ryzen");
-    printf("8.AMD Ryzen 9 9900X3D - $110\n9. AMD Ryzen 5 7600X- $250\n10. AMD Ryzen 7 9800X3D:- $250");
+    printf("AMD Ryzen\n");
+    printf("8.AMD Ryzen 9 9900X3D - $110\n9. AMD Ryzen 5 7600X- $250\n10. AMD Ryzen 7 9800X3D:- $250");
     printf("Enter choice (1-10): ");
     scanf("%d", &choice);
 
@@ -101,17 +107,17 @@ int main() {
 
     // Monitor Option
     printf("\nDo you need a Monitor ($600)?\n1. Yes\n2. No\nEnter choice (1-2): ");
-    scanf("%d", &choice);
+    scanf("%d", &choice5);
 
-    if(choice == 1) { strcpy(monitor, "Yes"); monitorPrice = 600.0; }
+    if(choice5 == 1) { strcpy(monitor, "Yes"); monitorPrice = 600.0; }
     else { strcpy(monitor, "No"); monitorPrice = 0.0; }
 
     // Quantity
     printf("\nEnter Quantity: ");
     scanf("%d", &quantity);
 
-    // Total Price
-    float totalPrice = (processorPrice + gpuPrice + ramPrice + storagePrice + otherPrice + monitorPrice) * quantity;
+    //calling total price function to calculate the total price of the material bought
+   float price= totalPrice(processorPrice,gpuPrice,ramPrice,storagePrice,otherPrice,monitorPrice,quantity);
 
     // Order Summary
     printf("Hi %c here is your order summary,Please check!!",name);
@@ -124,15 +130,15 @@ int main() {
     printf("Monitor: %s\n", monitor);
     printf("Quantity: %d\n", quantity);
     printf("----------------------------\n");
-    printf("Total Price: $%.2f\n", totalPrice);
+    printf("Total Price: $%.2f\n", price);
     printf("============================\n");
 
     // Confirmation
     printf("\nConfirm Order?\n1. Yes\n2. No\nEnter choice (1-2): ");
-    scanf("%d", &choice5);
+    scanf("%d", &choice6);
 
-    if(choice5 == 1){
-        printf("\n (^ _ ^) Yay! %c Your order has been placed successfully.\n",name);
+    if(choice6 == 1){
+        printf("\n (^ _ ^) Yay! %s Your order has been placed successfully.\n",name);
         printf("\nThank you for shopping with ISHVIT CORPORATIONS!\n");
     }else{
         printf("\n (>_<) Order cancelled.\n");

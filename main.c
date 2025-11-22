@@ -49,7 +49,7 @@ int main() {
               start1:
         printf("\nSelect Graphics Card (GPU):\n");
     printf("1. NVIDIA GTX 1650 - $150\n2. NVIDIA GTX 3060 - $400\n3. JieShou AMD RX580 8G - $140\n4. AMD Radeon RX 6600 - $300\n5.None");
-    printf("Enter choice (1-4): ");
+    printf("Enter choice (1-5): ");
     scanf("%d", &choice1);
    switch(choice1) {
         case 1: strcpy(gpu, "NVIDIA GTX 1650"); gpuPrice = 150.0; break;
@@ -64,7 +64,7 @@ int main() {
               start2:
        printf("\nSelect RAM:\n");
     printf("1. 2GB - $15\n2. 4GB - $30\n3. 8GB - $50\n4. 16GB - $80\n5. 32GB - $150\n6.None");
-    printf("Enter choice (1-5): ");
+    printf("Enter choice (1-6): ");
     scanf("%d", &choice2);
     switch(choice2) {
         case 1: strcpy(ram, "2GB"); ramPrice = 15.0; break;
@@ -81,7 +81,7 @@ int main() {
               start3:
     printf("\nSelect Storage:\n");
     printf("1. 256GB Pendrive - $40\n2. 500GB SSD - $70\n3. 1TB Portable SSD - $120\n4. 5TB HDD - $100\n5.None");
-    printf("Enter choice (1-4): ");
+    printf("Enter choice (1-5): ");
     scanf("%d", &choice3);
     switch(choice3) {
         case 1: strcpy(storage, "256GB Pendrive"); storagePrice = 40.0; break;
@@ -130,7 +130,7 @@ personal_details();
 // calling storage menu function
        storagemenu();
     // calling Other Accessories Menu function
-   otheraccessorymenu();
+  otheraccessorymenu();
     // Monitor Option
     printf("\nDo you need a Monitor ($600)?\n1. Yes\n2. No\nEnter choice (1-2): ");
     scanf("%d", &choice5);

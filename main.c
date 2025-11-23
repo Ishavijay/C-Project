@@ -1,27 +1,28 @@
 #include <stdio.h>
 #include <string.h>
-// declaring functions
-//Personal details function
-void personal_details();
-//processor menu function
-void processormenu()
-// graphic card menu function
- void graphiccardmenu()
-//ram menu function
-void rammenu();
-//storage menu function
-void storagemenu();
-//other acsessories menu
-void otheraccessorymenu()
-//Total price function
- float totalPrice(float a, float b, float c, float d, float e, float f, int g);
-int main() { 
-    char name[50];
+//declaring variables
+char name[50];
     int mobile_number;
     int choice,choice1,choice2,choice3,choice4,choice5,choice6;
     int quantity;
     float processorPrice = 0.0, gpuPrice = 0.0, ramPrice = 0.0, storagePrice = 0.0, otherPrice = 0.0, monitorPrice = 0.0;
     char processor[30], gpu[40], ram[10], storage[30], other[20], monitor[5];
+// declaring functions
+//Personal details function
+void personal_details();
+//processor menu function
+void processormenu();
+// graphic card menu function
+ void graphiccardmenu();
+//ram menu function
+void rammenu();
+//storage menu function
+void storagemenu();
+//other acsessories menu
+void otheraccessorymenu();
+//Total price function
+ float totalPrice(float a, float b, float c, float d, float e, float f, int g);
+int main() { 
        
     printf("===== ISHVIT CORPORATIONS =====\n");
     printf("Welcome! Customize your PC Order Below.\n\n");
@@ -30,24 +31,19 @@ personal_details();
     // Processor Menu
        // calling processor menu function
        processormenu();  
-
     // calling Graphics card Menu function
        graphiccardmenu();
-     
     // calling RAM Menu function
    rammenu();
 // calling storage menu function
        storagemenu();
     // calling Other Accessories Menu function
-  otheraccessorymenu();
-    
+  otheraccessorymenu();  
     // Monitor Option
     printf("\nDo you need a Monitor ($600)?\n1. Yes\n2. No\nEnter choice (1-2): ");
     scanf("%d", &choice5);
-
     if(choice5 == 1) { strcpy(monitor, "Yes"); monitorPrice = 600.0; }
     else { strcpy(monitor, "No"); monitorPrice = 0.0; }
-
     // Quantity
     printf("\nEnter Quantity: ");
     scanf("%d", &quantity);
@@ -84,7 +80,7 @@ personal_details();
 }     
 
 //---------------------------------function definitions-------------------------------------------------
-char personal_details(){
+void personal_details(){
     printf("Please enter your name:");
     fgets(name, sizeof(name), stdin);
     printf("Enter your mobile number:");

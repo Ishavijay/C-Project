@@ -2,10 +2,19 @@
 #include <string.h>
 // declaring functions
 //Personal details function
+void personal_details();
 //processor menu function
+void processormenu()
+// graphic card menu function
+ void graphiccardmenu()
 //ram menu function
+void rammenu();
 //storage menu function
+void storagemenu();
 //other acsessories menu
+void otheraccessorymenu()
+//Total price function
+ float totalPrice(float a, float b, float c, float d, float e, float f, int g);
 int main() { 
     char name[50];
     int mobile_number;
@@ -13,7 +22,69 @@ int main() {
     int quantity;
     float processorPrice = 0.0, gpuPrice = 0.0, ramPrice = 0.0, storagePrice = 0.0, otherPrice = 0.0, monitorPrice = 0.0;
     char processor[30], gpu[40], ram[10], storage[30], other[20], monitor[5];
-    char personal_details(){
+       
+    printf("===== ISHVIT CORPORATIONS =====\n");
+    printf("Welcome! Customize your PC Order Below.\n\n");
+//calling personal details function
+personal_details();
+    // Processor Menu
+       // calling processor menu function
+       processormenu();  
+
+    // calling Graphics card Menu function
+       graphiccardmenu();
+     
+    // calling RAM Menu function
+   rammenu();
+// calling storage menu function
+       storagemenu();
+    // calling Other Accessories Menu function
+  otheraccessorymenu();
+    
+    // Monitor Option
+    printf("\nDo you need a Monitor ($600)?\n1. Yes\n2. No\nEnter choice (1-2): ");
+    scanf("%d", &choice5);
+
+    if(choice5 == 1) { strcpy(monitor, "Yes"); monitorPrice = 600.0; }
+    else { strcpy(monitor, "No"); monitorPrice = 0.0; }
+
+    // Quantity
+    printf("\nEnter Quantity: ");
+    scanf("%d", &quantity);
+
+    //calling total price function to calculate the total price of the material bought
+   float price= totalPrice(processorPrice,gpuPrice,ramPrice,storagePrice,otherPrice,monitorPrice,quantity);
+
+    // Order Summary
+    printf("Hi %c here is your order summary,Please check!!",name);
+    printf("\n=====> ORDER SUMMARY <=====\n");
+    printf("Processor: %s\n", processor);
+    printf("GPU: %s\n", gpu);
+    printf("RAM: %s\n", ram);
+    printf("Storage: %s\n", storage);
+    printf("Other: %s\n", other);
+    printf("Monitor: %s\n", monitor);
+    printf("Quantity: %d\n", quantity);
+    printf("----------------------------\n");
+    printf("Total Price: $%.2f\n", price);
+    printf("============================\n");
+
+    // Confirmation
+    printf("\nConfirm Order?\n1. Yes\n2. No\nEnter choice (1-2): ");
+    scanf("%d", &choice6);
+
+    if(choice6 == 1){
+        printf("\n (^ _ ^) Yay! %s Your order has been placed successfully.\n",name);
+        printf("\nThank you for shopping with ISHVIT CORPORATIONS!\n");
+    }else{
+        printf("\n (>_<) Order cancelled.\n");
+            printf("See you next time %s, till then byee, have a great day!!",name);
+    }
+    return 0;
+}     
+
+//---------------------------------function definitions-------------------------------------------------
+char personal_details(){
     printf("Please enter your name:");
     fgets(name, sizeof(name), stdin);
     printf("Enter your mobile number:");
@@ -113,62 +184,3 @@ int main() {
        float totalPrice(float a, float b, float c, float d, float e, float f, int g){
        int price=(a+b+c+d+e+f)*g;
     return price;}
-       
-    printf("===== ISHVIT CORPORATIONS =====\n");
-    printf("Welcome! Customize your PC Order Below.\n\n");
-//calling personal details function
-personal_details();
-    // Processor Menu
-       // calling processor menu function
-       processormenu();  
-
-    // calling Graphics card Menu function
-       graphiccardmenu();
-     
-    // calling RAM Menu function
-   rammenu();
-// calling storage menu function
-       storagemenu();
-    // calling Other Accessories Menu function
-  otheraccessorymenu();
-    // Monitor Option
-    printf("\nDo you need a Monitor ($600)?\n1. Yes\n2. No\nEnter choice (1-2): ");
-    scanf("%d", &choice5);
-
-    if(choice5 == 1) { strcpy(monitor, "Yes"); monitorPrice = 600.0; }
-    else { strcpy(monitor, "No"); monitorPrice = 0.0; }
-
-    // Quantity
-    printf("\nEnter Quantity: ");
-    scanf("%d", &quantity);
-
-    //calling total price function to calculate the total price of the material bought
-   float price= totalPrice(processorPrice,gpuPrice,ramPrice,storagePrice,otherPrice,monitorPrice,quantity);
-
-    // Order Summary
-    printf("Hi %c here is your order summary,Please check!!",name);
-    printf("\n=====> ORDER SUMMARY <=====\n");
-    printf("Processor: %s\n", processor);
-    printf("GPU: %s\n", gpu);
-    printf("RAM: %s\n", ram);
-    printf("Storage: %s\n", storage);
-    printf("Other: %s\n", other);
-    printf("Monitor: %s\n", monitor);
-    printf("Quantity: %d\n", quantity);
-    printf("----------------------------\n");
-    printf("Total Price: $%.2f\n", price);
-    printf("============================\n");
-
-    // Confirmation
-    printf("\nConfirm Order?\n1. Yes\n2. No\nEnter choice (1-2): ");
-    scanf("%d", &choice6);
-
-    if(choice6 == 1){
-        printf("\n (^ _ ^) Yay! %s Your order has been placed successfully.\n",name);
-        printf("\nThank you for shopping with ISHVIT CORPORATIONS!\n");
-    }else{
-        printf("\n (>_<) Order cancelled.\n");
-            printf("See you next time %s, till then byee, have a great day!!",name);
-    }
-    return 0;
-}

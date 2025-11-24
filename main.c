@@ -85,7 +85,7 @@ void personal_details(){
     fgets(name, sizeof(name), stdin);
     printf("Enter your mobile number:");
     scanf("%d",&mobile_number);
-    return 0;
+    return;
     }
        // processor menu funcion
        void processormenu(){
@@ -108,9 +108,8 @@ void personal_details(){
         case 8: strcpy(processor, "AMD Ryzen 5"); processorPrice = 250.0; break;
         case 9: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250.0; break;
         case 10: strcpy(processor, "AMD Ryzen 7"); processorPrice = 250.0; break;
-           case 11: strcpy(processor, "none"); processorPrice = 0.0; break;
-           default:
-              printf("INVALID INPUT"); goto start;
+           case 11: strcpy(processor, "none"); processorPrice = 0.0;printf("\n"); break;
+           default:printf("INVALID INPUT \n");printf("Choose Again\n"); goto start;}}
        // graphic card menu function
        void graphiccardmenu(){
               start1:
@@ -123,9 +122,9 @@ void personal_details(){
         case 2: strcpy(gpu, "NVIDIA GTX 3060"); gpuPrice = 400.0; break;
         case 3: strcpy(gpu, "JieShou AMD RX580 8G"); gpuPrice = 140.0; break;
         case 4: strcpy(gpu, "AMD Radeon RX 6600"); gpuPrice = 300.0; break;
-          case 5: strcpy(gpu, "None"); gpuPrice = 0.0;
+          case 5: strcpy(gpu, "None"); gpuPrice = 0.0;printf("\n");break;
         default: 
-              printf("INVALID INPUT"); goto start1;
+              printf("INVALID INPUT"); printf("Choose Again"); goto start1;
        }}
        void rammenu(){
               start2:
@@ -139,10 +138,10 @@ void personal_details(){
         case 3: strcpy(ram, "8GB"); ramPrice = 50.0; break;
         case 4: strcpy(ram, "16GB"); ramPrice = 80.0; break;
         case 5: strcpy(ram, "32GB"); ramPrice = 150.0; break;
-           case 6: strcpy(ram, "None"); ramPrice = 0.0;
+           case 6: strcpy(ram, "None"); ramPrice = 0.0;printf("\n");break;
        default:
-              printf("INVALID INPUT");goto start2;
-       }
+              printf("INVALID INPUT \n") ; printf("Choose Again \n") ; goto start2;
+       }}
     // Storage Menu function
        void storagemenu(){
               start3:
@@ -155,10 +154,10 @@ void personal_details(){
         case 2: strcpy(storage, "500GB SSD"); storagePrice = 70.0; break;
         case 3: strcpy(storage, "1TB Portable SSD"); storagePrice = 120.0; break;
         case 4: strcpy(storage, "5TB HDD"); storagePrice = 100.0; break;
-           case 5: strcpy(storage, "None"); storagePrice = 0.0;
-           default:printf("INVALID INPUT");goto start3;
+           case 5: strcpy(storage, "None"); storagePrice = 0.0;printf("\n");break;
+           default:printf("INVALID INPUT \n"); printf("Choose Again \n");goto start3;
        }
-
+       }
        //othe accessory menu function
        void otheraccessorymenu(){
               start5:
@@ -172,10 +171,10 @@ void personal_details(){
         case 2: strcpy(other, "Printer"); otherPrice = 300.0; break;
         case 3: strcpy(other, "Keyboard"); otherPrice = 150.0; break;
         case 4: strcpy(other, "Mouse"); otherPrice = 40.0; break;
-           case 5: strcpy(other, "None"); otherPrice = 0.0;
+           case 5: strcpy(other, "None"); otherPrice = 0.0;printf("\n");break;
     default:
-              printf("INVALID INPUT");goto start5;
-       }
+              printf("INVALID INPUT \n");printf ("Choose Again \n");goto start5;
+       }}
        // total price function
        float totalPrice(float a, float b, float c, float d, float e, float f, int g){
        int price=(a+b+c+d+e+f)*g;

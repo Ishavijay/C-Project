@@ -2,26 +2,19 @@
 #include <string.h>
 //declaring variables
 char name[50];
-    int mobile_number;
+    long long mobile_number;
     int choice,choice1,choice2,choice3,choice4,choice5,choice6;
     int quantity;
     float processorPrice = 0.0, gpuPrice = 0.0, ramPrice = 0.0, storagePrice = 0.0, otherPrice = 0.0, monitorPrice = 0.0;
-    char processor[30], gpu[40], ram[10], storage[30], other[20], monitor[5];
+    char processor[30], gpu[40], ram[10], storage[30], other[200], monitor[20];
 // declaring functions
-//Personal details function
-void personal_details();
-//processor menu function
-void processormenu();
-// graphic card menu function
- void graphiccardmenu();
-//ram menu function
-void rammenu();
-//storage menu function
-void storagemenu();
-//other acsessories menu
-void otheraccessorymenu();
-//Total price function
- float totalPrice(float a, float b, float c, float d, float e, float f, int g);
+void personal_details(); //Personal details function
+void processormenu();//processor menu function
+ void graphiccardmenu();// graphic card menu function
+void rammenu();//ram menu function
+void storagemenu();//storage menu function
+void otheraccessorymenu();//other acsessories menu function
+float totalPrice(float a, float b, float c, float d, float e, float f, int g);   //Total price function
 int main() { 
        
     printf("======================= ISHVIT CORPORATIONS ======================\n");
@@ -29,22 +22,24 @@ int main() {
 //calling personal details function
 personal_details();
     // Processor Menu
-       // calling processor menu function
-       processormenu();  
-    // calling Graphics card Menu function
-       graphiccardmenu();
-    // calling RAM Menu function
-   rammenu();
-// calling storage menu function
-       storagemenu();
-    // calling Other Accessories Menu function
-  otheraccessorymenu();  
-    // Monitor Option
+       processormenu();   // calling processor menu function
+       graphiccardmenu(); // calling Graphics card Menu function
+       rammenu(); // calling RAM Menu function
+       storagemenu();// calling storage menu function
+    
+  otheraccessorymenu();  // calling Other Accessories Menu function
+    // Monitor Optiion
+    S1:
     printf("\nDo you need a Monitor ($600)?\n1. Yes\n2. No\nEnter choice (1-2): ");
     scanf("%d", &choice5);
-    if(choice5 == 1) { strcpy(monitor, "Yes"); monitorPrice = 600.0; }
-    else { strcpy(monitor, "No"); monitorPrice = 0.0; }
-    // Quantity
+    if(choice5 == 1) {
+        strcpy(monitor, "Yes"); monitorPrice = 600.0; }
+    else if (choice5 == 2)
+    { strcpy(monitor, "No"); monitorPrice = 0.0; }
+else{
+    printf("Invalid Input!!"); printf("Choose again");goto S1;
+}// Quantity
+    
     printf("\nEnter Quantity: ");
     scanf("%d", &quantity);
 
@@ -82,6 +77,7 @@ personal_details();
 //---------------------------------function definitions-------------------------------------------------
 void personal_details(){
     printf("Please enter your name:");
+    while(getchar() != '\n');
     fgets(name, sizeof(name), stdin);
     printf("Enter your mobile number:");
     scanf("%d",&mobile_number);
@@ -92,8 +88,7 @@ void personal_details(){
               start:
        printf(".......................Select Processor (CPU).........................\n");
     printf("             Intel Core \n             ");
-    printf("1.Intel i3-12100 -$330.0\n2. Intel i5-14400F - $350\n3.Intel i5-14600K - $370\n4.Intel i5 -13600KF-$400
-        \n5.Intel i7-14700F -$420.0\n6.Intel i7-13700K - $450\n7. Intel i7-14700KF -$500.0\n ");
+    printf("1.Intel i3-12100 -$330.0\n2. Intel i5-14400F - $350\n3.Intel i5-14600K - $370\n4.Intel i5 -13600KF-$400\n5.Intel i7-14700F -$420.0\n6.Intel i7-13700K - $450\n7. Intel i7-14700KF -$500.0\n ");
     printf("              AMD Ryzen              \n");
     printf("8.AMD Ryzen 9 9900X3D - $400\n9. AMD Ryzen 5 7600X- $700\n10. AMD Ryzen 7 9800X3D:- $1000\n11.None");
            printf("\n");
@@ -165,9 +160,10 @@ void personal_details(){
        }
        //othe accessory menu function
        void otheraccessorymenu(){
-              start5:
-    strcpy(other, ""); //
-
+     // clear text
+           strcpy(other, "");     
+      // reset price
+ otherPrice = 0.0; 
     while(1) {
         printf("\n...... Select Other Accessories (choose 0 to finish) ......\n");
         printf("1. HDMI Cable - $10\n");
@@ -179,7 +175,7 @@ void personal_details(){
         printf("Enter Your preference: ");
         scanf("%d", &choice4);
 
-        switch(choice) {
+        switch(choice4) {
             case 1:strcat(other, "HDMI Cable, ");
                 otherPrice += 10.0;
                 break;
@@ -196,14 +192,13 @@ void personal_details(){
                 otherPrice += 40.0;
                 break;
 
-            case 0:if(strlen(other) == 0)
+            case 0: if(strlen(other) == 0)
                     strcpy(other, "None");
-                return;  
+                return;
 
-            default:printf("Invalid input! Try again.\n");Goto start5;
-        }
-    }
-}
+            default: printf("Invalid input! Try again.\n");
+                continue; 
+        }}}
        // total price function
        float totalPrice(float a, float b, float c, float d, float e, float f, int g){
        float price=(a+b+c+d+e+f)*g;

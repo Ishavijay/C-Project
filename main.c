@@ -77,10 +77,10 @@ else{
 //---------------------------------function definitions-------------------------------------------------
 void personal_details(){
     printf("Please enter your name:");
-    while(getchar() != '\n');
     fgets(name, sizeof(name), stdin);
+    name[strcspn(name, "\n")] = 0;
     printf("Enter your mobile number:");
-    scanf("%d",&mobile_number);
+    scanf("%lld",&mobile_number);
     return;
     }
        // processor menu funcion

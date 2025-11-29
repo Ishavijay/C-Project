@@ -75,6 +75,7 @@ else{
 }     
 
 //---------------------------------function definitions-------------------------------------------------
+//personal detail function
 void personal_details(){
     printf("Please enter your name:");
     fgets(name, sizeof(name), stdin);
@@ -124,6 +125,7 @@ void personal_details(){
         default: 
               printf("INVALID INPUT"); printf("Choose Again"); goto start1;
        }}
+//ram menu function
        void rammenu(){
               start2:
        printf("\n...........................Select RAM..........................\n");

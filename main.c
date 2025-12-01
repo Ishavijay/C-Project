@@ -37,7 +37,7 @@ personal_details();
     else if (choice5 == 2)
     { strcpy(monitor, "No"); monitorPrice = 0.0; }
 else{
-    printf("Invalid Input!!"); printf("Choose again");goto S1;
+    printf("Invalid Input!!\n"); printf("Choose again");goto S1;
 }// Quantity
     
     printf("\nEnter Quantity: ");
@@ -86,7 +86,7 @@ void personal_details(){
     }
        // processor menu funcion
        void processormenu(){
-              start:
+           while(1){
        printf(".......................Select Processor (CPU).........................\n");
     printf("             Intel Core \n             ");
     printf("1.Intel i3-12100 -$330.0\n2. Intel i5-14400F - $350\n3.Intel i5-14600K - $370\n4.Intel i5 -13600KF-$400\n5.Intel i7-14700F -$420.0\n6.Intel i7-13700K - $450\n7. Intel i7-14700KF -$500.0\n ");
@@ -107,10 +107,14 @@ void personal_details(){
         case 9: strcpy(processor, "AMD Ryzen 5 7600X"); processorPrice = 700.0; break;
         case 10: strcpy(processor, "AMD Ryzen 7 9800X3D"); processorPrice = 1000.0; break;
            case 11: strcpy(processor, "none"); processorPrice = 0.0;printf("\n"); break;
-           default:printf("INVALID INPUT \n");printf("Choose Again\n"); goto start;}}
+           default:printf("INVALID INPUT \n");printf("CHOOSE AGAIN\n");
+               continue;}
+break;
+           }}
        // graphic card menu function
        void graphiccardmenu(){
-              start1:
+           while(1){
+             
         printf("\n.................Select Graphics Card (GPU)...................\n");
     printf("1. NVIDIA GTX 1650 - $150\n2. NVIDIA GTX 3060 - $400\n3. JieShou AMD RX580 8G - $140\n4. AMD Radeon RX 6600 - $300\n5.None");
            printf("\n");
@@ -123,11 +127,12 @@ void personal_details(){
         case 4: strcpy(gpu, "AMD Radeon RX 6600"); gpuPrice = 300.0; break;
           case 5: strcpy(gpu, "None"); gpuPrice = 0.0;printf("\n");break;
         default: 
-              printf("INVALID INPUT"); printf("Choose Again"); goto start1;
-       }}
+              printf("INVALID INPUT \n"); printf("Choose Again \n"); continue;
+       } break;
+           }}
 //ram menu function
        void rammenu(){
-              start2:
+              while(1){
        printf("\n...........................Select RAM..........................\n");
     printf("1. 2GB - $15\n2. 4GB - $30\n3. 8GB - $50\n4. 16GB - $80\n5. 32GB - $150\n6.None");
     printf("\n");
@@ -141,11 +146,11 @@ void personal_details(){
         case 5: strcpy(ram, "32GB"); ramPrice = 150.0; break;
            case 6: strcpy(ram, "None"); ramPrice = 0.0;printf("\n");break;
        default:
-              printf("INVALID INPUT \n") ; printf("Choose Again \n") ; goto start2;
-       }}
+              printf("INVALID INPUT \n") ; printf("CHOOSE AGAIN \n") ; continue;
+       } break;}}
     // Storage Menu function
        void storagemenu(){
-              start3:
+              while(1){
     printf("\n.............................Select Storage.............................\n");
     printf("1. 256GB Pendrive - $40\n2. 500GB SSD - $70\n3. 1TB Portable SSD - $120\n4. 5TB HDD - $100\n5.None");
            printf("\n");
@@ -157,9 +162,9 @@ void personal_details(){
         case 3: strcpy(storage, "1TB Portable SSD"); storagePrice = 120.0; break;
         case 4: strcpy(storage, "5TB HDD"); storagePrice = 100.0; break;
            case 5: strcpy(storage, "None"); storagePrice = 0.0;printf("\n");break;
-           default:printf("INVALID INPUT \n"); printf("Choose Again \n");goto start3;
-       }
-       }
+           default:printf("INVALID INPUT \n"); printf("CHOOSE AGAIN \n");continue;
+       }break;
+       }}
        //othe accessory menu function
        void otheraccessorymenu(){
      // clear text

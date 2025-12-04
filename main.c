@@ -167,10 +167,7 @@ break;
        }}
        //othe accessory menu function
        void otheraccessorymenu(){
-     // clear text
            strcpy(other, "");     
-      // reset price
- otherPrice = 0.0; 
     while(1) {
         printf("\n...... Select Other Accessories (choose 0 to finish) ......\n");
         printf("1. HDMI Cable - $10\n");
